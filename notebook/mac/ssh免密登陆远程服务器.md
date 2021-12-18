@@ -18,7 +18,7 @@ ssh-keygen -t rsa
 3. 将本地密钥copy到目标服务器中
 
 ```
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@0.0.0.0
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@*.*.*.*
 
 ```
 

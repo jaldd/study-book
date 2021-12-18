@@ -32,3 +32,26 @@
    ```
 
    
+   
+   一到远程服务器运行 rz 或者sz 就报错，错误是
+   
+   /usr/local/bin/iterm2-send-zmodem.sh: line 18: /usr/local/bin/sz: No such file or directory
+   
+   按照报错地址，在本地的“/usr/local/bin”下没有sz和rz，但是brew install lrzsz 已经安装成功，
+   
+    
+   
+   解决方案：
+   
+   brew list lrzsz
+   找到安装位置，比如我的在/opt/homebrew/Cellar/lrzsz/0.12.20_1/bin/下
+   
+   
+   
+   那么就去修改 iterm2-send-zmodem.sh 和 iterm2-recv-zmodem.sh 中的sz和rz的位置
+   
+   比如我的 iterm2-send-zmodem.sh 文件
+   
+   
+   
+   按照图中框选的，把原始的上面那行注释，更改为下面那行，就ok了。 同理，iterm2-recv-zmodem.sh也是一样的方法。
